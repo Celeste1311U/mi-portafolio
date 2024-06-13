@@ -1,4 +1,4 @@
-import periodictable
+import periodictable as pt
 
 #Definir los valores del grupo orbital
 s = 2
@@ -29,19 +29,16 @@ confE = {
     '7p': p
 }
 
-# Solicitar al usuario que ingrese el número atómico del elemento
-z = int(input('Ingrese el Z del elemento: '))
-
+z = int(input('ingrese su z: '))
 while z!=0:
   ce=''
-  elemento = periodictable.elements[z]
+  elemento = pt.elements[z]
   for orbitales, electrones in confE.items():
     if z >= electrones:
       ce += orbitales + str(electrones) + ' '
       z -= electrones
-    else:
-      if z!=0:
-        ce += orbitales + str(z)
+    elif z!=0:
+      ce += orbitales + str(z)
       break
   print(f'La CE del elemento {elemento} es: {ce}')
-  z = int(input('Ingrese otro Z o 0 para finalizar: '))
+  z = int(input('ingrese su z o 0 para finalizar: '))
