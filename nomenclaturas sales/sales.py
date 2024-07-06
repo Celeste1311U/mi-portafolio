@@ -55,7 +55,7 @@ while True:
         print(TradicionalAfm(sal))
     elif sal in moderna.values:
         print(ModernaAft(sal))
-    elif sal == 'Salir':
+    elif sal == 'fin':
         print('chau')
         break
     else:
